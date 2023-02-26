@@ -1,0 +1,27 @@
+body{
+   display:grid;
+   place-items:center;
+}
+#hsbody{
+   width:100vw;
+   height:100vh;
+}
+#finalscore{
+   color:#56a5eb;
+}
+#highscoreslist{
+   list-style:none;
+   width:60%;
+}
+.userndscore{
+   background:#00d5ff1a;
+   font-size:2rem;
+   font-weight:600;
+   color:#56a5eb;
+   padding:1rem;
+   margin:1rem;
+   text-align:center;
+   width:100%;
+   margin-left:0;
+   border:1px solid #56a5eb;
+}

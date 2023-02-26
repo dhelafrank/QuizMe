@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+   <title>QuizMe | Congrats</title>
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="./end.css">
+</head>
+<body>
+   <h1 id="head">QuizMe</h1>
+   <img src="./oval.svg" id="loading">
+   <div id="infoblock">
+      <p id ="lQuestions" class="loadingInfo">Loading Questions...</p>
+      <p id ="lSave" class="loadingInfo">Saving Score...</p>
+   </div>
+   <div class="container" id="home">
+      <div id="homecont" class="flex-center flex-column">
+      <h2 class="congrats" id="congratsMsg">Congratulations <span id="username" class="congrats">Guest</span></h2>
+      <h3 id="scoretext">You Scored</h3>
+      <h2 id="score">0/0</h2>
+      
+      <div id="buttons-segment" class="flex-center flex-column">
+        <button id="save" class="btn" onclick="saveScore()">Save</button>
+        
+        <button id="replay" class="btn" onclick="playAgain()">Play Again</button>
+        
+        <button id="home" class="btn" onclick="toHome()">Home</button>
+      </div>
+   </div>
+   </div>
+  
+   
+    <script src="end.js"></script>
+</body>
+</html>

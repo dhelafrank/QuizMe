@@ -1,0 +1,37 @@
+body{
+   display:grid;
+   place-items:center;
+}
+#heading{
+   text-align:center;
+   width:100%;
+}
+.congrats{
+   color:orange;
+   text-shadow:3px 3px #ccc;
+}
+#scoretext{
+   color:#56a5eb;
+}
+#score{
+   color:#56a5eb;
+}
+#congratsMsg{
+   text-align:center;
+}
+.loadingInfo{
+ /*   display:none; */
+   font-size:2rem;
+   text-align:center;
+   margin:auto;
+   color:#56a5eb;
+}
+#infoblock{
+   display:flex;
+}
+#lQuestions{
+   display:none;
+}
+#lSave{
+   display:none;
+}
