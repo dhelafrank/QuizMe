@@ -1,5 +1,5 @@
 <br/>
-   <h3 align="center"> QuizME </h3> 
+   <h3 align="center"> QuizMe </h3> 
   
    <p align="center"> 
     Simple Quiz App Built with JS
