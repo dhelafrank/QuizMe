@@ -1,6 +1,7 @@
 let playButton = document.getElementById("playbtn")
 let highScoreButton = document.getElementById("hsbtn")
 let userText = document.getElementById("usertext")
+let coursetext = document.getElementById("coursetext")
 let errorDiv = document.getElementById("error")
 let errorText = document.getElementById("errormsg")
 let loadImage = document.getElementById("loading")
@@ -12,11 +13,13 @@ playButton.style = "border-color: #fff"
 playButton.style = "background-color: #00000033"
 loadMsg.style = "display:none"
 /* Event Listener */
+
 playButton.addEventListener("click", () => {
    setTimeout(() => {
       nameCheck()
    }, 500)
 })
+
 highScoreButton.addEventListener("click", () => {
    setTimeout(() => {
       load()
@@ -56,6 +59,7 @@ nameCheck = () => {
    }*/
    else {
       localStorage.setItem('username', userText.value)
+      localStorage.setItem('questionSource', coursetext.value)
       load()
       loadMsg.style = "display:block"
       setTimeout(() => {
