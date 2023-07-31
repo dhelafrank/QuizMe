@@ -24,8 +24,8 @@ function fetchSource() {
 	if(source == "random"){
 		questionSource =  "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
 	}
-	else if (source == "gss101"){
-		questionSource =  "https://quizme-backend.onrender.com/gss101"
+	else{
+		questionSource =  `https://quizme-backend.onrender.com/${source.toLowerCase()}`
 	}
 	go(questionSource)
 	document.getElementById("quizme").innerHTML = `QuizMe | ${source.toUpperCase()}`
