@@ -59,6 +59,7 @@ nameCheck = () => {
    }*/
    else {
       localStorage.setItem('username', userText.value)
+      sessionStorage.setItem('auth',userText)
       localStorage.setItem('questionSource', coursetext.value)
       load()
       loadMsg.style = "display:block"

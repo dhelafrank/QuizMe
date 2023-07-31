@@ -6,7 +6,9 @@ let remaining = document.getElementById("inset");
 let loadImage = document.getElementById("loading")
 let home = document.getElementById("home")
 let loadingStatus = document.getElementById("detail")
-
+if (sessionStorage.getItem("auth").length < 3) {
+	window.location.href = "/"
+}
 
 let currentQuestion = {}
 let acceptingAnswers = false;
