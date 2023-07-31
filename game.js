@@ -38,7 +38,6 @@ questions = [];
 function go(questionSource) {
 fetch(questionSource)
 .then(res => {
-	console.log(res)
 	return res.json()
 })
 .then((loadedQuestions) => {
