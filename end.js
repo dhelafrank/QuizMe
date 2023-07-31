@@ -7,7 +7,7 @@ let loadImage = document.getElementById("loading")
 let lQuestions = document.getElementById("lQuestions")
 let lSave = document.getElementById("lSave")
 let homeElements = document.getElementById("homecont")
-if (sessionStorage.getItem("auth").length < 3) {
+if (sessionStorage.getItem("auth") == null || length < 3) {
 	window.location.href = "/"
 }
 
