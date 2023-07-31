@@ -23,11 +23,10 @@ let questionSource = ""
 
 function fetchSource() {
 	let source = localStorage.getItem("questionSource")
-	if(source == "random"){
-		questionSource =  "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
-	}
-	else{
-		questionSource =  `https://quizme-backend.onrender.com/${source.toLowerCase()}`
+	if (source == "random") {
+		questionSource = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
+	} else {
+		questionSource = `https://quizme-backend.onrender.com/${source.toLowerCase()}`
 	}
 	go(questionSource)
 	document.getElementById("quizme").innerHTML = `QuizMe | ${source.toUpperCase()}`
@@ -38,45 +37,45 @@ fetchSource()
 questions = [];
 
 function go(questionSource) {
-fetch(questionSource)
-.then(res => {
-	return res.json()
-})
-.then((loadedQuestions) => {
-	questions = loadedQuestions.results.map((loadedQuestion) => {
-		const formattedQuestion = {
-			question: loadedQuestion.question,
-		};
+	fetch(questionSource)
+		.then(res => {
+			return res.json()
+		})
+		.then((loadedQuestions) => {
+			questions = loadedQuestions.results.map((loadedQuestion) => {
+				const formattedQuestion = {
+					question: loadedQuestion.question,
+				};
 
-		const answerChoices = [...loadedQuestion.incorrect_answers];
-		formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
-		answerChoices.splice(
-			formattedQuestion.answer - 1,
-			0,
-			loadedQuestion.correct_answer
-		);
+				const answerChoices = [...loadedQuestion.incorrect_answers];
+				formattedQuestion.answer = Math.floor(Math.random() * 4) + 1;
+				answerChoices.splice(
+					formattedQuestion.answer - 1,
+					0,
+					loadedQuestion.correct_answer
+				);
 
-		answerChoices.forEach((choice, index) => {
-			formattedQuestion['choice' + (index + 1)] = choice;
-		});
+				answerChoices.forEach((choice, index) => {
+					formattedQuestion['choice' + (index + 1)] = choice;
+				});
 
-		return formattedQuestion;
-	});
-
-
-	console.log(MAX_QUESTIONS)
-	//loadedQuestions.forEach(each=>questions.push(each))
-	//console.log(questions)
-	startGame()
+				return formattedQuestion;
+			});
 
 
-}).catch(err => {
-	// alert("can't load questions at the moment, check your internet connection")
-	// setTimeout(d => {
-	// 	window.location.href = "./"
-	// }, 1000)
-	console.error(err);
-})
+			console.log(MAX_QUESTIONS)
+			//loadedQuestions.forEach(each=>questions.push(each))
+			//console.log(questions)
+			startGame()
+
+
+		}).catch(err => {
+			// alert("can't load questions at the moment, check your internet connection")
+			// setTimeout(d => {
+			// 	window.location.href = "./"
+			// }, 1000)
+			console.error(err);
+		})
 }
 
 
