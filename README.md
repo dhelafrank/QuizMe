@@ -24,7 +24,7 @@
  1. Clone the repo 
   
  ```sh 
- git clone https://github.com/Dhela19/QuizME
+ git clone https://github.com/Dhela19/QuizMe
  ``` 
   
  ## Contributing 
