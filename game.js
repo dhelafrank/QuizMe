@@ -21,7 +21,7 @@ let MAX_QUESTIONS;
 
 questions = [];
 
-fetch("https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple")
+fetch("https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple")
 	.then(res => {
 		return res.json()
 	})
@@ -88,11 +88,6 @@ function startGame() {
 
 
 function getNewQuestion() {
-	/* console.log(questionCounter)
-	console.log(availableQuestions.length)
-	console.log(MAX_QUESTIONS) */
-	//let dividend = (questionCounter / MAX_QUESTIONS) * 100;
-	//let dividend = (questionCounter / 31) * 100;
 	let dividend = 10;
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
@@ -114,12 +109,6 @@ function getNewQuestion() {
 	remaining.style.width = `${increase}%`
 	currentQuestion = availableQuestions[questionsIndex];
 	question.innerHTML = currentQuestion.question;
-
-
-	/*choices.forEach(choice = {
-	const number = choice.dataset["number"];
-	choice.innerText = currentQuestion ['choice', number];
-	});*/
 	choices.forEach((choice) => {
 		const number = choice.dataset['number'];
 		choice.innerText = currentQuestion['choice' + number];
@@ -131,7 +120,6 @@ function getNewQuestion() {
 choices.forEach((choice) => {
 	choice.addEventListener('click', (e) => {
 		if (!acceptingAnswers) return;
-
 		acceptingAnswers = false;
 		const selectedChoice = e.target;
 		const selectedAnswer = selectedChoice.dataset['number'];

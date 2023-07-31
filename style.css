@@ -75,6 +75,7 @@ h3{
    padding: 1rem;
    background:#ffffff88;
    color:#56a5eb;
+   outline:none;
 }
 /* Buttons */
 .btn{
