@@ -24,7 +24,9 @@ let questionSource = ""
 
 function fetchSource() {
 	let source = localStorage.getItem("questionSource")
-	if (source == "random") {
+	if (source == "general knowledge") {
+		questionSource = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
+	} else if (source == "science: computers") {
 		questionSource = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
 	} else {
 		questionSource = `https://quizme-backend.onrender.com/${source.toLowerCase()}`
