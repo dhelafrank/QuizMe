@@ -7,7 +7,7 @@ let loadImage = document.getElementById("loading")
 let home = document.getElementById("home")
 let loadingStatus = document.getElementById("detail")
 
-if (sessionStorage.getItem("auth") == null || length < 3) {
+if (sessionStorage.getItem("auth") == null) {
 	window.location.href = "/"
 }
 
