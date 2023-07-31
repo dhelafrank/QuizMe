@@ -2,7 +2,7 @@
    <h3 align="center"> QuizME </h3> 
   
    <p align="center"> 
-    Simple Quize App Built with JS
+    Simple Quiz App Built with JS
      <br/> 
      Note This Project Is Still W.I.P 
      <br/> 
