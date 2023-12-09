@@ -67,16 +67,10 @@ function go(questionSource) {
 
 
 			console.log(MAX_QUESTIONS)
-			//loadedQuestions.forEach(each=>questions.push(each))
-			//console.log(questions)
 			startGame()
 
 
 		}).catch(err => {
-			// alert("can't load questions at the moment, check your internet connection")
-			// setTimeout(d => {
-			// 	window.location.href = "./"
-			// }, 1000)
 			console.error(err);
 		})
 }
@@ -171,24 +165,7 @@ choices.forEach((choice) => {
 	});
 });
 
-
-
-/* Progress Bar
-progress = () => {
-   prog = (MAX_QUESTIONS/100)
-}
-*/
-
-
-
 console.log("The game has begun");
-
-
-
-/*
-if (classToApply === "correct") {
-      incrementScore(CORRECT_BONUS);
-    }*/
 ""
 incrementScore = num => {
 	score += num;
