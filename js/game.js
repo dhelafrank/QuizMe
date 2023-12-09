@@ -30,6 +30,7 @@ function fetchSource() {
 		questionSource = "https://opentdb.com/api.php?amount=10&category=18&difficulty=medium&type=multiple"
 	} else {
 		questionSource = `https://quizme-backend.onrender.com/${source.toLowerCase()}`
+		// questionSource = `http://localhost:3000/${source.toLowerCase()}`
 	}
 	go(questionSource)
 	document.getElementById("quizme").innerHTML = `QuizMe | ${source.toUpperCase()}`
@@ -45,6 +46,8 @@ function go(questionSource) {
 			return res.json()
 		})
 		.then((loadedQuestions) => {
+			console.log(JSON.stringify(loadedQuestions));
+			// return
 			questions = loadedQuestions.results.map((loadedQuestion) => {
 				const formattedQuestion = {
 					question: loadedQuestion.question,

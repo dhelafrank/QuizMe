@@ -10,3 +10,5 @@ if (sessionStorage.getItem("auth") == null || length < 3) {
 highScoresList.innerHTML = (highScores.map(scores => {
    return(`<li class=userndscore>${scores.name} - ${scores.score}<li>`)
 })).join("");
+
+localStorage.clear()

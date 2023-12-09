@@ -8,6 +8,7 @@ let loadImage = document.getElementById("loading")
 let loadMsg = document.getElementById("lQuestion")
 let home = document.getElementById("home")
 
+
 playButton.style = "color:#aaaaaa"
 playButton.style = "border-color: #fff"
 playButton.style = "background-color: #00000033"
@@ -15,6 +16,8 @@ loadMsg.style = "display:none"
 /* Event Listener */
 
 playButton.addEventListener("click", () => {
+// console.log(coursetext.value);
+
    setTimeout(() => {
       nameCheck()
    }, 500)
@@ -28,6 +31,8 @@ highScoreButton.addEventListener("click", () => {
       window.location.href = "./highscore.html";
    }, 3000)
 })
+
+
 userText.addEventListener("keyup", () => {
    if (userText.value.length > 3) {
       playButton.style.color = "#56a5eb"
@@ -61,7 +66,10 @@ nameCheck = () => {
       localStorage.setItem('username', userText.value)
       sessionStorage.setItem('auth',userText.value)
       localStorage.setItem('questionSource', coursetext.value)
+      console.log(coursetext.value);
+      
       load()
+
       loadMsg.style = "display:block"
       setTimeout(() => {
          window.location.href = "./game.html";
