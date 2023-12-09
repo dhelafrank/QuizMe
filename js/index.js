@@ -27,9 +27,10 @@ highScoreButton.addEventListener("click", () => {
    setTimeout(() => {
       load()
    }, 1000)
+
    setTimeout(() => {
       window.location.href = "./highscore.html";
-   }, 3000)
+   }, 4000)
 })
 
 

@@ -1,5 +1,8 @@
 highScoresList = document.getElementById("highscoreslist")
 highScores = JSON.parse(localStorage.getItem('highScores')) || [];
+
+document.getElementById('head').innerText = `Quiz Me | ${localStorage.getItem('questionSource')}`
+
 console.log(JSON.stringify(localStorage.getItem('highScores')))
 
 
@@ -11,4 +14,4 @@ highScoresList.innerHTML = (highScores.map(scores => {
    return(`<li class=userndscore>${scores.name} - ${scores.score}<li>`)
 })).join("");
 
-localStorage.clear()
+// localStorage.clear()

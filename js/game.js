@@ -108,7 +108,7 @@ function startGame() {
 
 
 function getNewQuestion() {
-	let dividend = (10 / 100) * MAX_QUESTIONS;
+	let dividend = Math.floor((100 / MAX_QUESTIONS))
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
 		load("Compiling Questions Please Wait", true, saveScore)
