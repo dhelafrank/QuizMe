@@ -46,7 +46,7 @@ function go(questionSource) {
 			return res.json()
 		})
 		.then((loadedQuestions) => {
-			console.log(JSON.stringify(loadedQuestions));
+			// console.log(JSON.stringify(loadedQuestions));
 			// return
 			questions = loadedQuestions.results.map((loadedQuestion) => {
 				const formattedQuestion = {
@@ -69,7 +69,7 @@ function go(questionSource) {
 			});
 
 
-			console.log(MAX_QUESTIONS)
+			// console.log(MAX_QUESTIONS)
 			startGame()
 
 
@@ -85,11 +85,11 @@ function go(questionSource) {
 
 /* CONSTANTS */
 
-MAX_QUESTIONS = 10
-const CORRECT_BONUS = 3;
+MAX_QUESTIONS = 35
+const CORRECT_BONUS = 2;
 setTimeout(k = () => {
 	totalScore = (CORRECT_BONUS * MAX_QUESTIONS)
-	console.log(totalScore)
+	// console.log(totalScore)
 }, 800)
 
 let score = 0
@@ -106,7 +106,7 @@ function startGame() {
 
 
 function getNewQuestion() {
-	let dividend = 10;
+	let dividend = (10/100) * MAX_QUESTIONS;
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
 		load()
@@ -163,7 +163,7 @@ choices.forEach((choice) => {
 			getNewQuestion();
 		}, 500)
 
-		console.log(classToApply)
+		// console.log(classToApply)
 
 	});
 });
