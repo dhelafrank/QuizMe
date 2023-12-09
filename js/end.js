@@ -10,6 +10,8 @@ let homeElements = document.getElementById("homecont")
 if (sessionStorage.getItem("auth") == null) {
 	window.location.href = "/"
 }
+document.getElementById('head').innerText = `Quiz Me | ${localStorage.getItem('questionSource').toUpperCase()}`
+
 
 
 scoreDisplay.innerHTML = (localStorage.getItem("myScore"))
@@ -55,7 +57,7 @@ toHome = () => {
 
 
 playAgain = () => {
-   console.log("Play Again Clicked")
+   // console.log("Play Again Clicked")
    setTimeout(x = () => {
       homeElements.style.display = "none";
    loadImage.style.display = "block"
@@ -66,48 +68,8 @@ playAgain = () => {
         }, 5000)
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-const highScores = JSON.parse(fs.readFileSync('./highscores.json')) || [];
-console.log("step1")
-saveUserScore = () => { 
-console.log("step2")
-const scoredata = { 
-score: Number(localStorage.getItem("justScore")), 
-name: localStorage.getItem("username") 
-}
- //var scoreB = JSON.stringify(scoredata) 
-highScores.push(scoredata); 
-highScores.sort((a, b) => { return b.score - a.score}); highScores.splice(5); console.log("step3") 
-//localStorage.setItem('highScores',highScores); 
-fs.writeFileSync('highscores.json', JSON.stringify(highScores)); 
-//console.log(JSON.parse(localStorage.getItem("highScores")))
- } 
-
-
-*/
-
-
-
-
-
-
-
 const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-console.log("step1")
+// console.log("step1")
 
 saveUserScore = () => {
    console.log("step2")

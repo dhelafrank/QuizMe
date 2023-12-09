@@ -1,7 +1,7 @@
 highScoresList = document.getElementById("highscoreslist")
 highScores = JSON.parse(localStorage.getItem('highScores')) || [];
 
-document.getElementById('head').innerText = `Quiz Me | ${localStorage.getItem('questionSource')}`
+document.getElementById('head').innerText = `Quiz Me | ${localStorage.getItem('questionSource').toUpperCase()}`
 
 console.log(JSON.stringify(localStorage.getItem('highScores')))
 
