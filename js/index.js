@@ -68,12 +68,12 @@ nameCheck = () => {
       localStorage.setItem('questionSource', coursetext.value)
       console.log(coursetext.value);
       
-      load()
+      // load()
 
-      loadMsg.style = "display:block"
-      setTimeout(() => {
+      // loadMsg.style = "display:block"
+      // setTimeout(() => {
          window.location.href = "./game.html";
-      }, 7000)
+      // }, 7000)
    }
 }
 

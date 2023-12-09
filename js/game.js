@@ -23,6 +23,8 @@ let MAX_QUESTIONS;
 let questionSource = ""
 
 function fetchSource() {
+	load("Fetching Questions Please Wait", true, loaderNull)
+
 	let source = localStorage.getItem("questionSource")
 	if (source == "general knowledge") {
 		questionSource = "https://opentdb.com/api.php?amount=10&category=9&difficulty=medium&type=multiple"
@@ -64,7 +66,7 @@ function go(questionSource) {
 				answerChoices.forEach((choice, index) => {
 					formattedQuestion['choice' + (index + 1)] = choice;
 				});
-
+				load("", false, loaderNull)
 				return formattedQuestion;
 			});
 
@@ -72,7 +74,7 @@ function go(questionSource) {
 			// console.log(MAX_QUESTIONS)
 			startGame()
 
-
+			true
 		}).catch(err => {
 			console.error(err);
 		})
@@ -106,10 +108,10 @@ function startGame() {
 
 
 function getNewQuestion() {
-	let dividend = (10/100) * MAX_QUESTIONS;
+	let dividend = (10 / 100) * MAX_QUESTIONS;
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
-		load()
+		load("Compiling Questions Please Wait", true, saveScore)
 		setTimeout(() => {
 			window.location.href = "/end.html";
 		}, 4000)
@@ -176,11 +178,29 @@ incrementScore = num => {
 };
 
 
-function load() {
+function load(message, state, callback) {
+	if (!state) {
+		home.style.display = "flex"
+		loadImage.style.display = "none"
+		loadingStatus.style.display = "none"
+		loadingStatus.innerText = message
+		return
+	}
+
 	home.style.display = "none"
 	loadImage.style.display = "block"
 	loadingStatus.style.display = "block"
+	loadingStatus.innerText = message
+
+	callback()
+}
+
+function saveScore() {
 	let scoreFinal = (`${score} / ${totalScore}`)
 	localStorage.setItem("myScore", scoreFinal);
 	localStorage.setItem("justScore", score);
+}
+
+function loaderNull() {
+	console.log("Stopping Loader")
 }
