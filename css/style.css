@@ -11,15 +11,16 @@
 }
 h1{
    margin-bottom:1rem;
-   font-size:5.4rem;
+   font-size:4rem;
    color:#56a5eb;
+   margin-top: 3rem;
 }
 h1>span{
    font-size:2.4rem;
    font-weight:500;
 }
 h2{
-   font-size:4.2rem;
+   font-size:2rem;
    font-weight:700;
    margin-bottom:4rem;
 }

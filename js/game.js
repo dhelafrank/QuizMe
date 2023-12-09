@@ -108,7 +108,7 @@ function startGame() {
 
 
 function getNewQuestion() {
-	let dividend = Math.floor((100 / MAX_QUESTIONS))
+	let dividend = (100/35)
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
 		load("Compiling Questions Please Wait", true, saveScore)
@@ -181,7 +181,7 @@ choices.forEach((choice) => {
 	});
 });
 
-console.log("The game has begun");
+// console.log("The game has begun");
 ""
 incrementScore = num => {
 	score += num;
@@ -213,5 +213,5 @@ function saveScore() {
 }
 
 function loaderNull() {
-	console.log("Stopping Loader")
+	// console.log("Stopping Loader")
 }

@@ -1,3 +1,10 @@
+@import url("./style.css") all;
+h1{
+   margin-bottom:1rem;
+   font-size:4rem;
+   color:#56a5eb;
+   margin-top: 3rem;
+}
 body{
    display:grid;
    place-items:center;
@@ -8,7 +15,7 @@ body{
 }
 .congrats{
    color:#56a5eb;
-   text-shadow:3px 3px #ccc;
+   /* text-shadow:3px 3px #ccc; */
 }
 #scoretext{
    color:#56a5eb;

@@ -1,8 +1,11 @@
+@import url("./style.css") all;
+
 body{
     display:flex;
     place-items:center;
     flex-direction:column;
     align-items:center;
+    user-select: none;
     justify-content:flex-start;
  }
  .choice-container{
