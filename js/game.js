@@ -146,26 +146,37 @@ choices.forEach((choice) => {
 
 
 
-
-
 		let classToApply = 'incorrect';
 		if (selectedAnswer == currentQuestion.answer) {
+
+			//current question.answer is a number
+
 			classToApply = 'correct'
 			/* let currentScore =  score += CORRECT_BONUS
-			 
 			  scoreText.innerHTML = currentScore;*/
 			incrementScore(CORRECT_BONUS);
-
-
 		}
 
+		// currentQuestion.answer.classList.add('correct')
+
+		// console.log(choices.forEach(choice => {
+			// choice.dataset['number']
+			// choice
+		// }));
+
+
+
+		let correctAnswerContainer = choices.find(choice => choice.getAttribute("data-number") == currentQuestion.answer)
+		
+		correctAnswerContainer.classList.add('correct')
 		selectedChoice.parentElement.classList.add(classToApply);
 		setTimeout(() => {
 			selectedChoice.parentElement.classList.remove(classToApply);
+			correctAnswerContainer.classList.remove('correct')
 			getNewQuestion();
-		}, 500)
+		}, 700)
 
-		// console.log(classToApply)
+		// co10nsole.log(classToApply)
 
 	});
 });
