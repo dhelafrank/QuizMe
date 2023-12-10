@@ -111,7 +111,7 @@ function getNewQuestion() {
 	let dividend = (100/35)
 	if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
 		//go to the end page
-		load("Compiling Questions Please Wait", true, saveScore)
+		load("Compiling Score Please Wait", true, saveScore)
 		setTimeout(() => {
 			window.location.href = "/end.html";
 		}, 4000)

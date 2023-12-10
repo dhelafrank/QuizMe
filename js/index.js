@@ -1,3 +1,4 @@
+
 let playButton = document.getElementById("playbtn")
 let highScoreButton = document.getElementById("hsbtn")
 let userText = document.getElementById("usertext")
@@ -5,7 +6,7 @@ let coursetext = document.getElementById("coursetext")
 let errorDiv = document.getElementById("error")
 let errorText = document.getElementById("errormsg")
 let loadImage = document.getElementById("loading")
-let loadMsg = document.getElementById("lQuestion")
+let loadMsg = document.getElementById("detail")
 let home = document.getElementById("home")
 
 
@@ -16,7 +17,7 @@ loadMsg.style = "display:none"
 /* Event Listener */
 
 playButton.addEventListener("click", () => {
-// console.log(coursetext.value);
+   // console.log(coursetext.value);
 
    setTimeout(() => {
       nameCheck()
@@ -24,13 +25,13 @@ playButton.addEventListener("click", () => {
 })
 
 highScoreButton.addEventListener("click", () => {
-   setTimeout(() => {
-      load()
-   }, 1000)
+   // setTimeout(() => {
+   //    load()
+   // }, 1000)
 
-   setTimeout(() => {
+   // setTimeout(() => {
       window.location.href = "./highscore.html";
-   }, 4000)
+   // }, 4000)
 })
 
 
@@ -48,7 +49,7 @@ userText.addEventListener("keyup", () => {
 
 
 
-nameCheck = () => {
+function nameCheck(){
    if (userText.value.length < 1) {
       errorMessage()
       return errorText.innerHTML = "Input your name first"
@@ -65,15 +66,15 @@ nameCheck = () => {
    }*/
    else {
       localStorage.setItem('username', userText.value)
-      sessionStorage.setItem('auth',userText.value)
+      sessionStorage.setItem('auth', userText.value)
       localStorage.setItem('questionSource', coursetext.value)
       console.log(coursetext.value);
-      
+
       // load()
 
       // loadMsg.style = "display:block"
       // setTimeout(() => {
-         window.location.href = "./game.html";
+      window.location.href = "./game.html";
       // }, 7000)
    }
 }
@@ -81,11 +82,10 @@ nameCheck = () => {
 
 /* throw error */
 
-errorMessage = () => {
+function errorMessage(){
    errorDiv.style.transition = "1s";
    errorDiv.style.height = "5rem";
    errorText.style = "border:0.4rem solid #ff1f00a3;"
-   console.log("phase 2")
 
 }
 
@@ -100,8 +100,9 @@ errorMessage = () => {
  */
 
 /* SVG Animation */
-load = () => {
+function load(){
    home.style.display = "none"
    loadImage.style.display = "block"
    errorText.style.display = "none"
+   loadMsg.style.display = "block"
 }

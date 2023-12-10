@@ -1,44 +1,58 @@
 @import url("./style.css") all;
-h1{
-   margin-bottom:1rem;
-   font-size:4rem;
-   color:#56a5eb;
+
+h1 {
+   margin-bottom: 1rem;
+   font-size: 4rem;
+   color: #56a5eb;
    margin-top: 3rem;
 }
-body{
-   display:grid;
-   place-items:center;
+
+body {
+   display: grid;
+   place-items: center;
 }
-#heading{
-   text-align:center;
-   width:100%;
+
+#heading {
+   text-align: center;
+   width: 100%;
 }
-.congrats{
-   color:#56a5eb;
+
+.congrats {
+   color: #56a5eb;
    /* text-shadow:3px 3px #ccc; */
 }
-#scoretext{
-   color:#56a5eb;
+
+#scoretext {
+   color: #56a5eb;
 }
-#score{
-   color:#56a5eb;
+
+#score {
+   color: #56a5eb;
 }
-#congratsMsg{
-   text-align:center;
+
+#congratsMsg {
+   text-align: center;
+   font-size: 3rem;
 }
-.loadingInfo{
- /*   display:none; */
-   font-size:2rem;
-   text-align:center;
-   margin:auto;
-   color:#56a5eb;
+
+.loadingInfo {
+   /*   display:none; */
+   font-size: 2rem;
+   text-align: center;
+   margin: auto;
+   color: #56a5eb;
+   
 }
-#infoblock{
-   display:flex;
+
+#infoblock {
+   display: flex;
+   padding-top: 5rem;
 }
-#lQuestions{
-   display:none;
+
+#lQuestions {
+   display: none;
 }
-#lSave{
-   display:none;
+
+#lSave {
+   display: none;
 }
